@@ -1,6 +1,16 @@
 import { getCollection, saveCollection, STORAGE_KEYS } from "./apiClient";
 import { setDataSourceMode } from "./dataSource";
 import { normalizeResult } from "./apiNormalize";
+import { questionService } from "./questionService";
+
+const mapSelectedOptionForApi = (selectedOptionId, attemptQuestion, apiQuestion) => {
+  if (!selectedOptionId || !apiQuestion?.options?.length) return selectedOptionId;
+  if (apiQuestion.options.some((o) => o.id === selectedOptionId)) return selectedOptionId;
+  const attemptOption = attemptQuestion?.options?.find((o) => o.id === selectedOptionId);
+  if (!attemptOption?.text) return selectedOptionId;
+  const apiMatch = apiQuestion.options.find((o) => o.text === attemptOption.text);
+  return apiMatch?.id || selectedOptionId;
+};
 
 const API_URL = "/api/results";
 const CANDIDATES_API = "/api/candidates";
@@ -55,9 +65,20 @@ const apiFetch = async (url, options = {}) => {
   return response.json();
 };
 
-const scoreAssessmentLocally = ({ candidate, test, answers, timeTakenSeconds }) => {
-  const questions = getCollection(STORAGE_KEYS.QUESTIONS);
-  const testQuestions = questions.filter((q) => test.questionIds.includes(q.id));
+const scoreAssessmentLocally = ({
+  candidate,
+  test,
+  answers,
+  timeTakenSeconds,
+  questions: attemptQuestions,
+}) => {
+  const questionBank =
+    attemptQuestions?.length > 0
+      ? attemptQuestions
+      : getCollection(STORAGE_KEYS.QUESTIONS);
+  const testQuestions = (test.questionIds || [])
+    .map((id) => questionBank.find((q) => q.id === id))
+    .filter(Boolean);
 
   let score = 0;
   let correctCount = 0;
@@ -185,13 +206,27 @@ export const resultService = {
     }
   },
 
-  submitAssessment: async ({ candidate, test, answers, timeTakenSeconds }) => {
-    const answerPayload = Object.entries(answers || {}).map(([questionId, selectedOptionId]) => ({
-      questionId,
-      selectedOptionId: selectedOptionId || null,
-    }));
+  submitAssessment: async ({ candidate, test, answers, timeTakenSeconds, questions }) => {
+    const buildAnswerPayload = (apiQuestions = []) =>
+      Object.entries(answers || {}).map(([questionId, selectedOptionId]) => {
+        const attemptQ = questions?.find((q) => q.id === questionId);
+        const apiQ = apiQuestions.find((q) => q.id === questionId);
+        const mappedId = mapSelectedOptionForApi(selectedOptionId, attemptQ, apiQ);
+        return {
+          questionId,
+          selectedOptionId: mappedId || null,
+        };
+      });
 
     try {
+      let apiQuestions = [];
+      try {
+        apiQuestions = await questionService.getQuestionsByIdsRaw(test.questionIds || []);
+      } catch {
+        apiQuestions = [];
+      }
+      const answerPayload = buildAnswerPayload(apiQuestions);
+
       await ensureCandidateOnApi(candidate);
       const data = await apiFetch(`${API_URL}/submit`, {
         method: "POST",
@@ -211,7 +246,13 @@ export const resultService = {
       return normalized;
     } catch {
       setDataSourceMode("local");
-      return scoreAssessmentLocally({ candidate, test, answers, timeTakenSeconds });
+      return scoreAssessmentLocally({
+        candidate,
+        test,
+        answers,
+        timeTakenSeconds,
+        questions,
+      });
     }
   },
 };

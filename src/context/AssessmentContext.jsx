@@ -124,6 +124,7 @@ export const AssessmentProvider = ({ children }) => {
         test: activeTest,
         answers: selectedAnswers,
         timeTakenSeconds: timeTaken,
+        questions,
       });
 
       setTestResult(result);

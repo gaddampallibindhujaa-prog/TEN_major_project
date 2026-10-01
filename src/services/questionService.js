@@ -4,14 +4,29 @@ import { setDataSourceMode } from "./dataSource";
 const API_URL = "/api/questions";
 
 const mergeQuestionOptionsFromLocal = (question) => {
-  if (question?.options?.length) return question;
-  const local = getCollection(STORAGE_KEYS.QUESTIONS).find((q) => q.id === question?.id);
-  if (!local?.options?.length) return question;
-  return {
-    ...question,
-    options: local.options,
-    correctOptionId: question.correctOptionId || local.correctOptionId,
-  };
+  if (!question) return question;
+  const local = getCollection(STORAGE_KEYS.QUESTIONS).find((q) => q.id === question.id);
+  const optionIds = (question.options || []).map((o) => o.id);
+  const correctIdMatchesOption =
+    question.correctOptionId && optionIds.includes(question.correctOptionId);
+
+  if (!question.options?.length && local?.options?.length) {
+    return {
+      ...question,
+      options: local.options,
+      correctOptionId: local.correctOptionId,
+    };
+  }
+
+  if (question.options?.length && !correctIdMatchesOption && local?.options?.length) {
+    return {
+      ...question,
+      options: local.options,
+      correctOptionId: local.correctOptionId,
+    };
+  }
+
+  return question;
 };
 
 const normalizeQuestions = (questions) => questions.map(mergeQuestionOptionsFromLocal);
@@ -50,6 +65,13 @@ export const questionService = {
       const all = getCollection(STORAGE_KEYS.QUESTIONS);
       return all.filter((q) => ids.includes(q.id));
     }
+  },
+
+  /** API shape only — for mapping submitted option ids to database option ids. */
+  getQuestionsByIdsRaw: async (ids) => {
+    if (!ids?.length) return [];
+    const data = await apiFetch(`${API_URL}?ids=${ids.join(",")}`);
+    return data;
   },
 
   createQuestion: async (questionData) => {
