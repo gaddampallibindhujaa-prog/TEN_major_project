@@ -98,7 +98,7 @@ export const CandidateLeaderboard = () => {
                     {entry.candidateName}
                   </h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400">{entry.testTitle}</p>
-                  <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                  <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-bold text-brand-600 dark:text-brand-400">
                     {entry.percentage}% Accuracy • {formatDuration(entry.timeTakenSeconds)}
                   </div>
                 </div>
@@ -127,7 +127,7 @@ export const CandidateLeaderboard = () => {
                       key={row.id || index}
                       className={`hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors ${
                         isCurrentUser
-                          ? "bg-indigo-50/60 dark:bg-indigo-950/40 font-medium"
+                          ? "bg-brand-50/60 dark:bg-brand-950/40 font-medium"
                           : ""
                       }`}
                     >
@@ -141,7 +141,7 @@ export const CandidateLeaderboard = () => {
                             <span className="font-semibold text-slate-900 dark:text-slate-100 block">
                               {row.candidateName}
                               {isCurrentUser && (
-                                <span className="ml-2 text-[10px] bg-indigo-600 text-white px-1.5 py-0.5 rounded font-bold uppercase">
+                                <span className="ml-2 text-[10px] bg-brand-600 text-white px-1.5 py-0.5 rounded font-bold uppercase">
                                   You
                                 </span>
                               )}

@@ -27,7 +27,7 @@ export const Avatar = ({ name = "User", size = "md", src = null, className = "" 
 
   return (
     <div
-      className={`${sizes[size]} rounded-full bg-gradient-to-tr from-indigo-600 to-violet-500 text-white flex items-center justify-center font-medium shadow-inner select-none ${className}`}
+      className={`${sizes[size]} rounded-full bg-gradient-to-tr from-brand-600 to-violet-500 text-white flex items-center justify-center font-medium shadow-inner select-none ${className}`}
     >
       {getInitials(name)}
     </div>

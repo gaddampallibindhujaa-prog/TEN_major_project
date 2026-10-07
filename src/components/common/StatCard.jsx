@@ -1,31 +1,26 @@
 import React from "react";
 import { Card } from "./Card";
 
-export const StatCard = ({ title, value, subtitle, icon: Icon, color = "indigo" }) => {
+export const StatCard = ({ title, value, subtitle, icon: Icon, color = "brand" }) => {
   const colorMap = {
-    indigo: "text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/50",
-    emerald: "text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50",
-    amber: "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50",
-    rose: "text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/50",
+    brand: "text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-brand-950/40",
+    emerald: "text-sage-700 dark:text-sage-300 bg-sage-50 dark:bg-sage-700/15",
+    amber: "text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/30",
+    rose: "text-rose-700 dark:text-rose-300 bg-rose-50 dark:bg-rose-950/30",
+    sage: "text-sage-700 dark:text-sage-300 bg-sage-50 dark:bg-sage-700/15",
   };
 
   return (
-    <Card>
-      <div className="flex items-center justify-between">
-        <div>
-          <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-            {title}
-          </p>
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mt-1 tracking-tight">
-            {value}
-          </h3>
-          {subtitle && (
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{subtitle}</p>
-          )}
+    <Card className="min-h-[126px]">
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0">
+          <p className="muted-label">{title}</p>
+          <h3 className="mt-2 text-2xl font-black tracking-[-0.035em] text-stone-900 dark:text-stone-50">{value}</h3>
+          {subtitle && <p className="mt-1 text-[11px] leading-5 text-stone-500 dark:text-stone-400">{subtitle}</p>}
         </div>
         {Icon && (
-          <div className={`p-3 rounded-xl ${colorMap[color] || colorMap.indigo}`}>
-            <Icon className="w-6 h-6" />
+          <div className={`shrink-0 rounded-2xl p-3 ${colorMap[color] || colorMap.brand}`}>
+            <Icon className="h-5 w-5" />
           </div>
         )}
       </div>

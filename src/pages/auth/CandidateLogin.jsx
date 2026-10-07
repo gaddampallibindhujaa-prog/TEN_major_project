@@ -39,7 +39,7 @@ export const CandidateLogin = () => {
     <div className="min-h-[80vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl">
         <div className="text-center mb-8">
-          <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white mx-auto mb-3 shadow-md">
+          <div className="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white mx-auto mb-3 shadow-md">
             <Code2 className="w-5 h-5" />
           </div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
@@ -83,11 +83,11 @@ export const CandidateLogin = () => {
                 type="checkbox"
                 checked={rememberMe}
                 onChange={(e) => setRememberMe(e.target.checked)}
-                className="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                className="rounded border-slate-300 text-brand-600 focus:ring-brand-500"
               />
               Remember me
             </label>
-            <Link to="/forgot-password" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+            <Link to="/forgot-password" className="text-brand-600 dark:text-brand-400 hover:underline">
               Forgot password?
             </Link>
           </div>
@@ -100,7 +100,7 @@ export const CandidateLogin = () => {
           <button
             type="button"
             onClick={handleDemoFill}
-            className="w-full py-2 border border-dashed border-indigo-300 dark:border-indigo-800/80 rounded-lg text-xs text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 transition-colors"
+            className="w-full py-2 border border-dashed border-brand-300 dark:border-brand-800/80 rounded-lg text-xs text-brand-600 dark:text-brand-400 hover:bg-brand-50 dark:hover:bg-brand-950/40 transition-colors"
           >
             Demo Autocomplete (Ameya Inamdar)
           </button>
@@ -108,7 +108,7 @@ export const CandidateLogin = () => {
 
         <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-500 dark:text-slate-400">
           Not registered yet?{" "}
-          <Link to="/register" className="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">
+          <Link to="/register" className="text-brand-600 dark:text-brand-400 font-semibold hover:underline">
             Create an Account
           </Link>
         </div>

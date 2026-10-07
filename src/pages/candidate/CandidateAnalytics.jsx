@@ -69,7 +69,7 @@ export const CandidateAnalytics = () => {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-2">
-          <BarChart3 className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+          <BarChart3 className="w-6 h-6 text-brand-600 dark:text-brand-400" />
           Candidate Performance Analytics
         </h1>
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
@@ -84,7 +84,7 @@ export const CandidateAnalytics = () => {
           value={`${avgScore}%`}
           subtitle="Across all attempts"
           icon={Target}
-          color="indigo"
+          color="brand"
         />
         <StatCard
           title="Assessments Taken"
@@ -110,11 +110,11 @@ export const CandidateAnalytics = () => {
       </div>
 
       {/* AI Performance Insight Callout */}
-      <div className="p-4 rounded-2xl bg-indigo-50/70 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800/80 flex items-start gap-3">
-        <div className="p-2 rounded-xl bg-indigo-600 text-white shrink-0">
+      <div className="p-4 rounded-2xl bg-brand-50/70 dark:bg-brand-950/40 border border-brand-200 dark:border-brand-800/80 flex items-start gap-3">
+        <div className="p-2 rounded-xl bg-brand-600 text-white shrink-0">
           <Lightbulb className="w-5 h-5" />
         </div>
-        <div className="text-xs sm:text-sm text-indigo-950 dark:text-indigo-200 leading-relaxed">
+        <div className="text-xs sm:text-sm text-brand-950 dark:text-brand-200 leading-relaxed">
           <span className="font-bold">Evaluation Insight:</span> Your Java and OOP concept scores show consistently high accuracy (&gt;85%). We recommend practicing DBMS Indexing and Complex SQL Joins to balance your full-stack percentile.
         </div>
       </div>

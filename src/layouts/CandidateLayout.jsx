@@ -19,11 +19,11 @@ export const CandidateLayout = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col">
+    <div className="min-h-screen bg-[#f5f1e8] dark:bg-[#191a18] text-stone-900 dark:text-stone-100 flex flex-col">
       <Navbar role="candidate" />
       <div className="flex-1 flex">
         <Sidebar role="candidate" />
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto w-full pb-20 lg:pb-8">
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-[1400px] mx-auto w-full pb-20 lg:pb-8">
           <Outlet />
         </main>
       </div>

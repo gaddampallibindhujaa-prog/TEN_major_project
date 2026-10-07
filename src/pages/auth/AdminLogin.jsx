@@ -36,11 +36,11 @@ export const AdminLogin = () => {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full bg-white dark:bg-slate-900 p-8 rounded-2xl border-2 border-indigo-200 dark:border-indigo-900 shadow-2xl relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-indigo-600" />
+      <div className="max-w-md w-full bg-white dark:bg-slate-900 p-8 rounded-2xl border-2 border-brand-200 dark:border-brand-900 shadow-2xl relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-brand-600" />
 
         <div className="text-center mb-8">
-          <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mx-auto mb-3">
+          <div className="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-950/60 border border-brand-200 dark:border-brand-800 text-brand-600 dark:text-brand-400 flex items-center justify-center mx-auto mb-3">
             <ShieldAlert className="w-6 h-6" />
           </div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
@@ -84,7 +84,7 @@ export const AdminLogin = () => {
           <button
             type="button"
             onClick={fillAdminDefaults}
-            className="w-full py-2 border border-dashed border-indigo-300 dark:border-indigo-800/80 rounded-lg text-xs text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 transition-colors"
+            className="w-full py-2 border border-dashed border-brand-300 dark:border-brand-800/80 rounded-lg text-xs text-brand-600 dark:text-brand-400 hover:bg-brand-50 dark:hover:bg-brand-950/40 transition-colors"
           >
             Autofill Default Admin (admin@codejudge.io)
           </button>
@@ -92,7 +92,7 @@ export const AdminLogin = () => {
 
         <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-500 dark:text-slate-400">
           Looking for the candidate test portal?{" "}
-          <Link to="/login" className="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">
+          <Link to="/login" className="text-brand-600 dark:text-brand-400 font-semibold hover:underline">
             Candidate Login
           </Link>
         </div>

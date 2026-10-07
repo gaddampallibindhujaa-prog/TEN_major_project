@@ -26,7 +26,7 @@ export const CandidateNotifications = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-2">
-            <Bell className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+            <Bell className="w-6 h-6 text-brand-600 dark:text-brand-400" />
             Notification Feed
           </h1>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
@@ -54,14 +54,14 @@ export const CandidateNotifications = () => {
               className={`p-4 rounded-xl border transition-colors flex items-start gap-4 ${
                 notif.isRead
                   ? "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800"
-                  : "bg-indigo-50/50 dark:bg-indigo-950/30 border-indigo-200 dark:border-indigo-800/80"
+                  : "bg-brand-50/50 dark:bg-brand-950/30 border-brand-200 dark:border-brand-800/80"
               }`}
             >
-              <div className="p-2 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 shrink-0">
+              <div className="p-2 rounded-xl bg-brand-50 dark:bg-brand-950/60 text-brand-600 dark:text-brand-400 shrink-0">
                 {notif.type === "success" ? (
                   <CheckCircle2 className="w-5 h-5 text-emerald-500" />
                 ) : (
-                  <Info className="w-5 h-5 text-indigo-500" />
+                  <Info className="w-5 h-5 text-brand-500" />
                 )}
               </div>
               <div className="flex-1">
@@ -69,7 +69,7 @@ export const CandidateNotifications = () => {
                   <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                     {notif.title}
                   </h4>
-                  {!notif.isRead && <Badge variant="indigo">New</Badge>}
+                  {!notif.isRead && <Badge variant="brand">New</Badge>}
                 </div>
                 <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
                   {notif.message}

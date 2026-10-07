@@ -65,7 +65,7 @@ export const AdminAnalytics = () => {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-2">
-          <BarChart3 className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+          <BarChart3 className="w-6 h-6 text-brand-600 dark:text-brand-400" />
           Enterprise Assessment Analytics
         </h1>
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
@@ -79,7 +79,7 @@ export const AdminAnalytics = () => {
           value={summary.testsCompleted}
           subtitle="Processed tests"
           icon={Award}
-          color="indigo"
+          color="brand"
         />
         <StatCard
           title="Average Score"

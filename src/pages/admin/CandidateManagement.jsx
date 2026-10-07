@@ -98,7 +98,7 @@ export const CandidateManagement = () => {
         <div className="flex items-center justify-end gap-2">
           <button
             onClick={() => handleToggleStatus(row)}
-            className="p-1.5 rounded-lg text-slate-500 hover:text-indigo-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="p-1.5 rounded-lg text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
             title="Toggle Status"
           >
             <Power className="w-4 h-4" />
@@ -118,7 +118,7 @@ export const CandidateManagement = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-2">
-            <Users className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+            <Users className="w-6 h-6 text-brand-600 dark:text-brand-400" />
             Candidate Roster & Access Control
           </h1>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">

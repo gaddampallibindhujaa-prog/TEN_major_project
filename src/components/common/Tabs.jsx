@@ -11,7 +11,7 @@ export const Tabs = ({ tabs = [], activeTab, onChange }) => {
             onClick={() => onChange(tab.id)}
             className={`pb-3 px-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
               isActive
-                ? "border-indigo-600 text-indigo-600 dark:text-indigo-400 font-semibold"
+                ? "border-brand-600 text-brand-600 dark:text-brand-400 font-semibold"
                 : "border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200"
             }`}
           >

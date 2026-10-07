@@ -88,7 +88,7 @@ export const TestDetailDrawer = ({ testId, onClose }) => {
             <>
               <div>
                 <div className="flex flex-wrap gap-2 mb-2">
-                  <Badge variant="indigo">{test.category}</Badge>
+                  <Badge variant="brand">{test.category}</Badge>
                   <Badge
                     variant={
                       test.difficulty === "Easy"
@@ -113,7 +113,7 @@ export const TestDetailDrawer = ({ testId, onClose }) => {
 
               <div className="grid grid-cols-2 gap-3 text-xs">
                 <div className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-slate-800/50">
-                  <Clock className="w-4 h-4 text-indigo-500" />
+                  <Clock className="w-4 h-4 text-brand-500" />
                   <span>{test.durationMinutes} min</span>
                 </div>
                 <div className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-slate-800/50">

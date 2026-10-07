@@ -44,7 +44,7 @@ export const AdminTestPreview = () => {
     return (
       <div className="text-center py-12 text-sm text-slate-500">
         Assessment not found.{" "}
-        <button type="button" className="text-indigo-600" onClick={() => navigate("/admin/tests")}>
+        <button type="button" className="text-brand-600" onClick={() => navigate("/admin/tests")}>
           Back to list
         </button>
       </div>
@@ -68,7 +68,7 @@ export const AdminTestPreview = () => {
 
       <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
         <div className="flex flex-wrap items-center gap-2 mb-3">
-          <Badge variant="indigo">{test.category}</Badge>
+          <Badge variant="brand">{test.category}</Badge>
           <Badge
             variant={
               test.difficulty === "Easy"
@@ -90,7 +90,7 @@ export const AdminTestPreview = () => {
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 pt-6 border-t border-slate-100 dark:border-slate-800">
           <div className="flex items-center gap-3">
-            <Clock className="w-5 h-5 text-indigo-500" />
+            <Clock className="w-5 h-5 text-brand-500" />
             <div>
               <p className="text-[11px] text-slate-400 uppercase font-semibold">Duration</p>
               <p className="text-sm font-bold">{test.durationMinutes} min</p>
@@ -122,7 +122,7 @@ export const AdminTestPreview = () => {
 
       <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
         <h3 className="text-base font-bold flex items-center gap-2 mb-4">
-          <ShieldAlert className="w-5 h-5 text-indigo-500" />
+          <ShieldAlert className="w-5 h-5 text-brand-500" />
           Rules (candidate view)
         </h3>
         <ul className="text-sm text-slate-600 dark:text-slate-300 space-y-2 list-disc list-inside">
@@ -147,7 +147,7 @@ export const AdminTestPreview = () => {
           >
             <div className="flex flex-wrap gap-2 text-xs">
               <span className="font-bold text-slate-400">Q{index + 1}</span>
-              <Badge variant="indigo">{q.category}</Badge>
+              <Badge variant="brand">{q.category}</Badge>
               <span className="text-slate-400">+{q.marks} marks</span>
             </div>
             <p className="text-sm font-medium text-slate-800 dark:text-slate-200">{q.text}</p>

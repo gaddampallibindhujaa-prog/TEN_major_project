@@ -133,7 +133,7 @@ export const EditTest = () => {
             </label>
             <textarea
               rows={3}
-              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm px-3 py-2 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm px-3 py-2 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none"
               value={test.description || ""}
               onChange={(e) => setTest({ ...test, description: e.target.value })}
             />
@@ -208,7 +208,7 @@ export const EditTest = () => {
             <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
               Questions ({selectedQuestionIds.length} selected)
             </h3>
-            <Badge variant="indigo">{availableQuestions.length} in bank</Badge>
+            <Badge variant="brand">{availableQuestions.length} in bank</Badge>
           </div>
 
           {availableQuestions.length === 0 ? (
@@ -229,13 +229,13 @@ export const EditTest = () => {
                     onClick={() => toggleQuestionSelection(q.id)}
                     className={`py-3 px-3 rounded-xl cursor-pointer flex items-start justify-between gap-3 transition-colors ${
                       isSelected
-                        ? "bg-indigo-50/70 dark:bg-indigo-950/40"
+                        ? "bg-brand-50/70 dark:bg-brand-950/40"
                         : "hover:bg-slate-50 dark:hover:bg-slate-800/40"
                     }`}
                   >
                     <div>
                       <div className="flex items-center gap-2 mb-1">
-                        <Badge variant="indigo">{q.category}</Badge>
+                        <Badge variant="brand">{q.category}</Badge>
                         <span className="text-[11px] text-slate-400">+{q.marks} Marks</span>
                       </div>
                       <p className="text-xs font-medium text-slate-800 dark:text-slate-200 line-clamp-2">
@@ -245,7 +245,7 @@ export const EditTest = () => {
                     <div
                       className={`w-5 h-5 rounded border flex items-center justify-center shrink-0 mt-1 ${
                         isSelected
-                          ? "bg-indigo-600 border-indigo-600 text-white"
+                          ? "bg-brand-600 border-brand-600 text-white"
                           : "border-slate-300 dark:border-slate-700"
                       }`}
                     >

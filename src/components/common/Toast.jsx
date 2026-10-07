@@ -9,7 +9,7 @@ export const ToastContainer = () => {
     success: <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />,
     error: <AlertCircle className="w-5 h-5 text-rose-500 shrink-0" />,
     warning: <AlertTriangle className="w-5 h-5 text-amber-500 shrink-0" />,
-    info: <Info className="w-5 h-5 text-indigo-500 shrink-0" />,
+    info: <Info className="w-5 h-5 text-brand-500 shrink-0" />,
   };
 
   return (

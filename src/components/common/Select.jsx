@@ -19,10 +19,10 @@ export const Select = ({
       <select
         value={value}
         onChange={onChange}
-        className={`w-full rounded-lg border bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 text-sm px-3 py-2 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+        className={`w-full rounded-lg border bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 text-sm px-3 py-2 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 ${
           error
             ? "border-rose-500"
-            : "border-slate-300 dark:border-slate-700 focus:border-indigo-500"
+            : "border-slate-300 dark:border-slate-700 focus:border-brand-500"
         } ${className}`}
         {...props}
       >

@@ -139,7 +139,7 @@ export const TestManagement = () => {
     },
     {
       header: "Category",
-      accessor: (row) => <Badge variant="indigo">{row.category}</Badge>,
+      accessor: (row) => <Badge variant="brand">{row.category}</Badge>,
     },
     {
       header: "Difficulty",
@@ -192,7 +192,7 @@ export const TestManagement = () => {
           <Link to={`/admin/tests/${row.id}/preview`}>
             <button
               type="button"
-              className="p-1.5 rounded-lg text-slate-500 hover:text-indigo-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="p-1.5 rounded-lg text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
               title="Preview as candidate"
             >
               <Eye className="w-4 h-4" />
@@ -201,7 +201,7 @@ export const TestManagement = () => {
           <button
             type="button"
             onClick={() => handleToggleStatus(row)}
-            className="p-1.5 rounded-lg text-slate-500 hover:text-indigo-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="p-1.5 rounded-lg text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
             title={
               row.status === "Active"
                 ? "Deactivate — hide from candidates"
@@ -215,7 +215,7 @@ export const TestManagement = () => {
           </button>
           <Link to={`/admin/tests/${row.id}/edit`}>
             <button
-              className="p-1.5 rounded-lg text-slate-500 hover:text-indigo-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="p-1.5 rounded-lg text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
               title="Edit Assessment"
             >
               <Edit2 className="w-4 h-4" />
@@ -223,7 +223,7 @@ export const TestManagement = () => {
           </Link>
           <button
             onClick={() => handleDuplicate(row)}
-            className="p-1.5 rounded-lg text-slate-500 hover:text-indigo-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="p-1.5 rounded-lg text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
             title="Duplicate Test"
           >
             <Copy className="w-4 h-4" />

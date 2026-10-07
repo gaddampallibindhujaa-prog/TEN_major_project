@@ -6,7 +6,7 @@ import { FileQuestion, ArrowLeft } from "lucide-react";
 export const NotFound = () => {
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4">
-      <div className="w-16 h-16 rounded-3xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-6">
+      <div className="w-16 h-16 rounded-3xl bg-brand-50 dark:bg-brand-950/60 text-brand-600 dark:text-brand-400 flex items-center justify-center mb-6">
         <FileQuestion className="w-8 h-8" />
       </div>
       <h1 className="text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">

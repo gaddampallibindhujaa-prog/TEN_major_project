@@ -7,11 +7,11 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
         <div className="col-span-2 md:col-span-1">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white">
+            <div className="w-7 h-7 rounded-lg bg-brand-600 flex items-center justify-center text-white">
               <Code2 className="w-4 h-4" />
             </div>
             <span className="font-bold text-base text-slate-900 dark:text-slate-100">
-              Code<span className="text-indigo-600 dark:text-indigo-400">Judge</span>
+              Code<span className="text-brand-600 dark:text-brand-400">Judge</span>
             </span>
           </div>
           <p className="mt-3 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">

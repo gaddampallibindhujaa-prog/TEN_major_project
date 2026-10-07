@@ -72,7 +72,7 @@ export const TestInstructions = () => {
       {/* Test Header */}
       <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
         <div className="flex flex-wrap items-center gap-2 mb-3">
-          <Badge variant="indigo">{test.category}</Badge>
+          <Badge variant="brand">{test.category}</Badge>
           <Badge variant={test.difficulty === "Easy" ? "success" : test.difficulty === "Medium" ? "warning" : "danger"}>
             {test.difficulty}
           </Badge>
@@ -89,7 +89,7 @@ export const TestInstructions = () => {
         {/* Vital stats row */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 pt-6 border-t border-slate-100 dark:border-slate-800">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400">
+            <div className="p-2.5 rounded-xl bg-brand-50 dark:bg-brand-950/60 text-brand-600 dark:text-brand-400">
               <Clock className="w-5 h-5" />
             </div>
             <div>
@@ -138,24 +138,24 @@ export const TestInstructions = () => {
       {/* Rules and Guidelines */}
       <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-4">
         <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-          <ShieldAlert className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+          <ShieldAlert className="w-5 h-5 text-brand-600 dark:text-brand-400" />
           Assessment Protocol & Regulations
         </h3>
         <ul className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
           <li className="flex items-start gap-2.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-2 shrink-0" />
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-600 mt-2 shrink-0" />
             <span>
               <strong>Countdown Timer:</strong> The timer activates immediately when you press <em>Start Assessment</em>. The test will automatically submit upon countdown expiration.
             </span>
           </li>
           <li className="flex items-start gap-2.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-2 shrink-0" />
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-600 mt-2 shrink-0" />
             <span>
               <strong>Continuous Auto-Save:</strong> Selected answers are saved in local session memory in real-time.
             </span>
           </li>
           <li className="flex items-start gap-2.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-2 shrink-0" />
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-600 mt-2 shrink-0" />
             <span>
               <strong>Mark for Review:</strong> Flag ambiguous questions to quickly jump back to them via the Question Navigator palette.
             </span>

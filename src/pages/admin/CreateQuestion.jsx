@@ -111,7 +111,7 @@ export const CreateQuestion = () => {
           </label>
           <textarea
             rows={3}
-            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm px-3 py-2 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm px-3 py-2 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none"
             placeholder="e.g. Which of the following collections classes guarantees insertion order?"
             value={text}
             onChange={(e) => setText(e.target.value)}
@@ -126,7 +126,7 @@ export const CreateQuestion = () => {
           </label>
           <textarea
             rows={4}
-            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-950 font-mono text-xs sm:text-sm px-3 py-2 text-emerald-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-950 font-mono text-xs sm:text-sm px-3 py-2 text-emerald-400 focus:ring-2 focus:ring-brand-500 focus:outline-none"
             placeholder="// Enter optional Java, SQL, or pseudocode here..."
             value={codeSnippet}
             onChange={(e) => setCodeSnippet(e.target.value)}
@@ -202,7 +202,7 @@ export const CreateQuestion = () => {
                   name="correctOption"
                   checked={correctOptionId === opt.id}
                   onChange={() => setCorrectOptionId(opt.id)}
-                  className="w-4 h-4 text-indigo-600 focus:ring-indigo-500"
+                  className="w-4 h-4 text-brand-600 focus:ring-brand-500"
                   title="Mark as correct answer"
                 />
                 <span className="text-xs font-mono font-bold text-slate-400 w-4">
@@ -211,7 +211,7 @@ export const CreateQuestion = () => {
                 <input
                   type="text"
                   placeholder={`Option ${String.fromCharCode(65 + idx)} text`}
-                  className="flex-1 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm px-3 py-2 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                  className="flex-1 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm px-3 py-2 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none"
                   value={opt.text}
                   onChange={(e) => handleOptionChange(opt.id, e.target.value)}
                   required
@@ -237,7 +237,7 @@ export const CreateQuestion = () => {
           </label>
           <textarea
             rows={3}
-            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm px-3 py-2 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm px-3 py-2 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none"
             placeholder="Explain why the marked answer is correct for candidate review..."
             value={explanation}
             onChange={(e) => setExplanation(e.target.value)}

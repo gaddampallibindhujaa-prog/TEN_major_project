@@ -52,7 +52,7 @@ export const QuestionNavigator = ({
           }
 
           if (isCurrent) {
-            buttonStyle += " ring-2 ring-indigo-600 dark:ring-indigo-400 ring-offset-2 dark:ring-offset-slate-950";
+            buttonStyle += " ring-2 ring-brand-600 dark:ring-brand-400 ring-offset-2 dark:ring-offset-slate-950";
           }
 
           return (

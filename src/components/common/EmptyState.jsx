@@ -11,7 +11,7 @@ export const EmptyState = ({
   return (
     <div className="flex flex-col items-center justify-center p-8 text-center rounded-2xl border border-dashed border-slate-300 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/20 my-6">
       {Icon && (
-        <div className="p-3 bg-indigo-50 dark:bg-indigo-950/40 rounded-2xl text-indigo-600 dark:text-indigo-400 mb-4">
+        <div className="p-3 bg-brand-50 dark:bg-brand-950/40 rounded-2xl text-brand-600 dark:text-brand-400 mb-4">
           <Icon className="w-8 h-8" />
         </div>
       )}

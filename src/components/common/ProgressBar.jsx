@@ -5,13 +5,13 @@ export const ProgressBar = ({
   max = 100,
   label,
   showPercentage = true,
-  color = "indigo",
+  color = "brand",
   height = "h-2",
 }) => {
   const percentage = Math.min(100, Math.max(0, Math.round((progress / (max || 1)) * 100)));
 
   const colors = {
-    indigo: "bg-indigo-600",
+    brand: "bg-brand-600",
     emerald: "bg-emerald-500",
     amber: "bg-amber-500",
     rose: "bg-rose-500",
@@ -29,7 +29,7 @@ export const ProgressBar = ({
       )}
       <div className={`w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden ${height}`}>
         <div
-          className={`${colors[color] || colors.indigo} ${height} rounded-full transition-all duration-300`}
+          className={`${colors[color] || colors.brand} ${height} rounded-full transition-all duration-300`}
           style={{ width: `${percentage}%` }}
         />
       </div>
