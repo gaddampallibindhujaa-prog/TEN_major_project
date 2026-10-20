@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-primary: #f7f5ef;
+    --color-bg-card: #fffdf9;
+    --color-border: #e5e0d7;
+    --color-text-main: #292a27;
+    --color-text-muted: #77766f;
+    --brand: #c45438;
+    --brand-soft: #fff0e9;
+  }
+
+  .dark {
+    --color-bg-primary: #1e201d;
+    --color-bg-card: #292b27;
+    --color-border: #3b3d38;
+    --color-text-main: #f6f2ea;
+    --color-text-muted: #aaa79e;
+    --brand: #e77d60;
+    --brand-soft: #392722;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(circle at 10% 0%, rgba(217, 105, 75, 0.07), transparent 28rem),
+      var(--color-bg-primary);
+    color: var(--color-text-main);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button, input, textarea, select {
+    font: inherit;
+  }
+
+  ::selection {
+    background: #f3a58d;
+    color: #292a27;
+  }
+}
+
+@layer components {
+  .app-surface {
+    background: rgba(255, 253, 249, 0.78);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 10px 30px rgba(45, 42, 36, 0.06);
+    backdrop-filter: blur(14px);
+  }
+
+  .dark .app-surface {
+    background: rgba(41, 43, 39, 0.82);
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-bold uppercase tracking-[0.16em] text-brand-600 dark:text-brand-400;
+  }
+
+  .page-title {
+    @apply text-2xl sm:text-3xl font-bold tracking-[-0.025em] text-slate-900 dark:text-stone-100;
+  }
+
+  .page-subtitle {
+    @apply mt-1 text-sm text-slate-500 dark:text-stone-400;
+  }
+}
+
+/* Quiet, narrow scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9c4b9;
+  border-radius: 999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #50534d;
+}

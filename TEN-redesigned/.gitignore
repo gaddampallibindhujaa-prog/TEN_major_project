@@ -1,0 +1,20 @@
+Set-Content -Path ".gitignore" -Value @'
+node_modules
+dist
+target/
+dist-ssr
+*.local
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local Spring Boot secrets (MySQL password)
+backend/src/main/resources/application-local.properties
+backend/.mvn/maven.config
+'@
